@@ -30,8 +30,8 @@ public class Philosopher {
     }
 
     private void releaseForks() {
-        release(getLeftFork());
         release(getRightFork());
+        release(getLeftFork());
     }
 
     /**
