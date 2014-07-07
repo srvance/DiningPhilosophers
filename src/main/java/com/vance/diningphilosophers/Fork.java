@@ -26,6 +26,9 @@ public class Fork {
      * @param id the ID of the place for the philosopher claiming the fork
      */
     public synchronized boolean grabBy(int id) {
+        if (grabbedBy == id) {
+            return true;
+        }
         if (grabbed.compareAndSet(false, true)) {
             grabbedBy = id;
             return true;
